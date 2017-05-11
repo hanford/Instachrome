@@ -11,8 +11,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "https://www.instagram.com/*",
-    "<all_urls>"
+    "https://www.instagram.com/*"
   ],
   "browser_action": {
     "default_popup": "index.html"
