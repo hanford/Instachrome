@@ -18,6 +18,7 @@ body {
   animation: spin 1.5s infinite linear;
   max-width: 2rem;
   margin-bottom: 1rem;
+  margin-top: 10rem;
 }
 
 .container {
@@ -26,7 +27,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 10rem;
   z-index: 0;
 }
 
