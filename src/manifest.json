@@ -19,5 +19,13 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/?mobile=true"],
+      "js": ["ua-override.js"],
+      "run_at" : "document_start",
+      "all_frames": true
+    }
+  ]
 }
