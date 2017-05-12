@@ -1,3 +1,5 @@
+const content = document.querySelector('.container')
+
 function setUserAgent (window, callback) {
   var userAgentProp = {
     get: function () { return ua },
@@ -26,4 +28,5 @@ const frameWindow = frame.contentWindow
 
 setUserAgent(frameWindow, () => {
   frame.src = 'https://www.instagram.com/?mobile=true'
+  frame.classList.add('overtop')
 })

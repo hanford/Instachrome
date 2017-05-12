@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  height: 557px;
+  width: 375px;
+  background-color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1.5s infinite linear;
+  max-width: 2rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10rem;
+  z-index: 0;
+}
+
+.overtop {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 375px;
+  height: 557px;
+  border: 0;
+}
