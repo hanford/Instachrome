@@ -8,6 +8,22 @@ All information stays local, extension is just a few lines of JavaScript. 🎉
 
 ![preview](https://github.com/hanford/Instachrome/blob/master/preview.png)
 
+#### Building
+Simply install the dependencies, and toss the `./dist/` folder into `chrome://extensions`
+```sh
+$ yarn install
+$ yarn build
+```
+
+#### Watching
+```sh
+$ yarn watch
+```
+
+And open `https://localhost:9966`
+
+<br />
+
 Questions? Feedback? [Please let me know](https://github.com/hanford/Instachrome/issues/new)
 
 ## License (MIT)

@@ -1,3 +1,5 @@
+import { url } from './constants'
+
 const content = document.querySelector('.container')
 
 function setUserAgent (window, callback) {
@@ -27,6 +29,6 @@ document.body.appendChild(frame)
 const frameWindow = frame.contentWindow
 
 setUserAgent(frameWindow, () => {
-  frame.src = 'https://www.instagram.com/?mobile=true'
+  frame.src = url
   frame.classList.add('overtop')
 })

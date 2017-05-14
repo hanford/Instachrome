@@ -1,4 +1,4 @@
-const domain = 'https://www.instagram.com/*'
+import { url } from './constants'
 
 chrome.webRequest.onHeadersReceived.addListener(details => {
   for (let i = 0; i < details.responseHeaders.length; i++) {
@@ -11,5 +11,5 @@ chrome.webRequest.onHeadersReceived.addListener(details => {
     }
   }
 }, {
-  urls: [domain]
+  urls: [url]
 }, ['blocking', 'responseHeaders'])
