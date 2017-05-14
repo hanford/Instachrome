@@ -1,34 +1,30 @@
 import { url } from './constants'
 
 const content = document.querySelector('.container')
+const frame = document.createElement('iframe')
 
-function setUserAgent (window, callback) {
-  var userAgentProp = {
-    get: function () { return ua },
-  }
+// append iframe to DOM before refrencing it's contentWindow
+// otherwise contentWindow is undefined
+document.body.appendChild(frame)
+const { contentWindow } = frame
 
-  var userAgentPlatform = {
-    get: function () { return platform }
-  }
+function setUserAgent (frameWindow, callback) {
+  const userAgentProp = { get: () => ua }
+  const userAgentPlatform = { get: () => platform }
+  const userAgentVendor = { get: () => vendor }
+  const { navigator } = frameWindow
 
-  var userAgentVendor = {
-    get: function () { return vendor }
-  }
-
-  Object.defineProperty(window.navigator, 'userAgent', userAgentProp)
-  Object.defineProperty(window.navigator, 'platform', userAgentPlatform)
-  Object.defineProperty(window.navigator, 'vendor', userAgentVendor)
+  Object.defineProperty(navigator, 'userAgent', userAgentProp)
+  Object.defineProperty(navigator, 'platform', userAgentPlatform)
+  Object.defineProperty(navigator, 'vendor', userAgentVendor)
 
   callback()
 }
 
-let frame = document.createElement('iframe')
-
-document.body.appendChild(frame)
-
-const frameWindow = frame.contentWindow
-
-setUserAgent(frameWindow, () => {
+setUserAgent(contentWindow, () => {
   frame.src = url
-  frame.classList.add('overtop')
+
+  frame.onload = () => {
+    frame.classList.add('overtop')
+  }
 })
