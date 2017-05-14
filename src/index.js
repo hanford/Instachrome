@@ -1,30 +1,16 @@
-import { url } from './constants'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Frame from './frame'
 
-const content = document.querySelector('.container')
-const frame = document.createElement('iframe')
-
-// append iframe to DOM before refrencing it's contentWindow
-// otherwise contentWindow is undefined
-document.body.appendChild(frame)
-const { contentWindow } = frame
-
-function setUserAgent (frameWindow, callback) {
-  const userAgentProp = { get: () => ua }
-  const userAgentPlatform = { get: () => platform }
-  const userAgentVendor = { get: () => vendor }
-  const { navigator } = frameWindow
-
-  Object.defineProperty(navigator, 'userAgent', userAgentProp)
-  Object.defineProperty(navigator, 'platform', userAgentPlatform)
-  Object.defineProperty(navigator, 'vendor', userAgentVendor)
-
-  callback()
+if (Frame.isReady()) {
+  Frame.toggle()
+} else {
+  boot()
 }
 
-setUserAgent(contentWindow, () => {
-  frame.src = url
+function boot() {
+  const root = document.createElement('div')
+  document.body.appendChild(root)
 
-  frame.onload = () => {
-    frame.classList.add('overtop')
-  }
-})
+  ReactDOM.render(<Frame />, root)
+}

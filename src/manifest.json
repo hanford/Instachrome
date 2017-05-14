@@ -11,13 +11,15 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "tabs",
+    "https://*/*",
+    "http://*/*",
     "https://www.instagram.com/*"
   ],
-  "browser_action": {
-    "default_popup": "index.html"
-  },
+  "browser_action": {},
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "default_locale": "en",
   "content_scripts": [
