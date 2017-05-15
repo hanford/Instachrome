@@ -8,6 +8,12 @@ All information stays local, extension is just a few lines of JavaScript. 🎉
 
 ![preview](https://github.com/hanford/Instachrome/blob/master/preview.png)
 
+#### TODO
+- Stories
+- Forward/back button
+- Download / Save content
+- DM's
+
 #### Building
 Simply install the dependencies, and toss the `./dist/` folder into `chrome://extensions`
 ```sh
