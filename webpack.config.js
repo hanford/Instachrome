@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     browser: './src/index.js',
     background: './src/background.js',
+    cs: './src/content-script.js'
   },
   module: {
     rules: [
