@@ -1,6 +1,6 @@
 {
   "name": "Instachrome",
-  "version": "1.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "webpack-dev-server": "~2.4.5"
   },
   "dependencies": {
-    "chrome-sidebar": "~0.1.1",
+    "chrome-sidebar": "~0.1.2",
     "react": "~15.5.4",
     "react-dom": "~15.5.4"
   }

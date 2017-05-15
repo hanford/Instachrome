@@ -5,7 +5,6 @@ const path = require('path')
 module.exports = {
   entry: {
     browser: './src/index.js',
-    cs: './src/ua-override.js',
     background: './src/background.js',
   },
   module: {

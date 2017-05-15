@@ -1,6 +1,6 @@
 {
   "name": "Instachrome",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "description": "Browse Instagram from anywhere",
   "icons": {
@@ -21,13 +21,5 @@
     "scripts": ["background.js"],
     "persistent": true
   },
-  "default_locale": "en",
-  "content_scripts": [
-    {
-      "matches": ["https://www.instagram.com/?mobile=true"],
-      "js": ["cs.js"],
-      "run_at" : "document_start",
-      "all_frames": true
-    }
-  ]
+  "default_locale": "en"
 }
